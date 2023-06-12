@@ -1,4 +1,4 @@
-import { UI } from '../ui.js';
+import { UI } from './components/ui.js';
 import {
     targetWidth, targetHeight,
     pageManager as pm
@@ -8,7 +8,9 @@ import { pageCallbackNames } from '../pageManager.js';
 
 export class BasePage {
     constructor(name, isMenu) {
-        this.bgColor = isMenu ? color('#7D98A1') : color('#EEF1EF');
+        // this.bgColor = isMenu ? color('#7D98A1') : color('#EEF1EF');
+        // use darker blue instead
+        this.bgColor = isMenu ? color('#7D98A1') : color('#7A8DA9');
 
         this.ui = new UI();
         this.ui.addText({
@@ -22,7 +24,7 @@ export class BasePage {
             });
         }
 
-        this.components = [];
+        this.components = [this.ui];
 
         for (let id of pageCallbackNames) {
             if (!this[id]) {
@@ -43,7 +45,6 @@ export class BasePage {
     }
 
     mousePressed() {
-        this.ui.mousePressed();
         this.callback('mousePressed');
     }
 
@@ -58,7 +59,6 @@ export class BasePage {
         fill(this.bgColor);
         rect(0, 0, targetWidth, targetHeight);
         this.callback('draw');
-        this.ui.draw();
         this.callback('drawOverlay');
     }
 }

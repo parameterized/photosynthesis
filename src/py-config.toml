@@ -1,0 +1,10 @@
+packages = ["numpy"]
+
+[splashscreen]
+autoclose = true
+
+[[interpreters]]
+src = "https://cdn.jsdelivr.net/pyodide/v0.22.1/full/pyodide.js"
+# src = "lib/pyodide-0.22.1/pyodide.js"
+name = "pyodide-0.22.1"
+lang = "python"

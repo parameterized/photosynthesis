@@ -2,7 +2,8 @@ import { ease } from './utils.js';
 import { targetWidth } from './index.js';
 
 import { MenuPage } from './pages/menu.js';
-import { ImagePage } from './pages/image.js';
+import { V1Page } from './pages/v1.js';
+// import { V2Page } from './pages/v2.js';
 
 export let pageCallbackNames = [
     'mousePressed', 'mouseReleased', 'mouseWheel', 'keyPressed',
@@ -16,7 +17,8 @@ export class PageManager {
     constructor() {
         this.pageClasses = {
             menu: MenuPage,
-            image: ImagePage
+            v1: V1Page,
+            // v2: V2Page,
         };
         this.pages = {
             menu: new this.pageClasses.menu()

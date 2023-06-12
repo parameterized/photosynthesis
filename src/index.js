@@ -2,7 +2,7 @@ import { Viewport } from "./viewport.js";
 import { PageManager } from "./pageManager.js";
 
 
-export let imageRes = 256;
+export let imageRes = 128;
 export let targetWidth = 1600;
 export let targetHeight = 900;
 export let viewport;
